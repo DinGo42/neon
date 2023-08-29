@@ -1,20 +1,22 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect, MouseEvent } from 'react';
 import { Header } from './header';
 
 export const HeaderContainer = () => {
   const [isOpen, setOpen] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
   const menuClickHandler = useCallback(
-    (e) => {
+    (e: Event) => {
+      const target = e.target as HTMLElement;
       if (!btnRef.current) return;
-      if (btnRef.current.contains(e.target)) {
+      if (btnRef.current.contains(target)) {
         return;
       } else if (
         isOpen &&
-        !btnRef.current.contains(e.target) &&
-        e.target.id !== 'menu'
+        !btnRef.current.contains(target) &&
+        target.id &&
+        target.id !== 'menu'
       ) {
         setOpen(false);
       }
@@ -23,10 +25,11 @@ export const HeaderContainer = () => {
   );
 
   useEffect(() => {
-    window.addEventListener('click', menuClickHandler);
+    document.addEventListener('click', menuClickHandler);
     return () => {
-      window.removeEventListener('click', menuClickHandler);
+      document.removeEventListener('click', menuClickHandler);
     };
   }, [menuClickHandler]);
+
   return <Header btnRef={btnRef} isOpen={isOpen} setOpen={setOpen} />;
 };

@@ -1,8 +1,8 @@
-import { Dispatch, FC, RefObject, SetStateAction } from 'react';
+import { Dispatch, FC, RefObject, SetStateAction, memo } from 'react';
 import MenuIcon from 'public/svgs/header/menu.svg';
 import { Button } from '@neon/shared';
 import { Menu } from './menu/menu';
-import { AppLink } from '@neon/shared/components';
+import { Link } from '@neon/shared/components';
 import {
   SelectedLinkStyleType,
   LinkStyleType,
@@ -26,23 +26,23 @@ export const Header: FC<HeaderProps> = ({ btnRef, isOpen, setOpen }) => {
           >
             <MenuIcon className="scale-90" />
           </Button>
-          <AppLink
+          <Link
             href={'/'}
             selectedEffect={SelectedLinkStyleType.HOVER_TEXT}
             linkStyle={LinkStyleType.HEADER_LINK}
             className="hover:text-pink-700 transition-all duration-700 max-tabletM:hidden"
           >
             Home
-          </AppLink>
+          </Link>
           <div className="max-tabletM:hidden flex gap-20">
-            <AppLink
+            <Link
               href={'/contact-us'}
               selectedEffect={SelectedLinkStyleType.HOVER_TEXT}
               linkStyle={LinkStyleType.HEADER_LINK}
               className="hover:text-pink-700 transition-all duration-700"
             >
               Зв`язок з нами
-            </AppLink>
+            </Link>
           </div>
         </div>
         <Menu isOpen={isOpen} />

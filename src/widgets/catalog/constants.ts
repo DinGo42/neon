@@ -5,7 +5,7 @@ export type ServiceType = {
   bgImg: string;
 };
 
-export const serviceTypes = [
+export const serviceTypes: ServiceType[] = [
   {
     type: `Advertising`,
     text: `Підвищте свій образ завдяки нашим рекламним рішенням.

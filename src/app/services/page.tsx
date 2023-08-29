@@ -5,8 +5,6 @@ export const metadata: Metadata = {
   title: 'Services',
 };
 
-const Services = () => {
-  return <Catalog />;
-};
+const Services = () => <Catalog />;
 
 export default Services;

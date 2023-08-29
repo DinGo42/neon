@@ -1,8 +1,8 @@
 'use client';
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect, FC } from 'react';
 import { WorkExp } from './work-exp';
 
-export const WorkExpContainer = () => {
+export const WorkExpContainer: FC = () => {
   const [currentChild, setCurrentChild] = useState(0);
   const infoList = useRef<HTMLDivElement>(null);
   const numVisibleReviews = 1;

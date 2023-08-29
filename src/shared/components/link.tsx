@@ -1,4 +1,4 @@
-import Link, { LinkProps } from 'next/link';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC, ReactNode, memo } from 'react';
 import { twJoin } from 'tailwind-merge';
@@ -14,15 +14,15 @@ export enum SelectedLinkStyleType {
   NONE = '',
 }
 
-type AppLinkProps = {
+type LinkProps = {
   children?: ReactNode;
   href: string;
   linkStyle?: LinkStyleType;
   selectedEffect: SelectedLinkStyleType;
   className?: string;
-} & LinkProps;
+} & NextLinkProps;
 
-export const AppLink: FC<AppLinkProps> = memo(
+export const Link: FC<LinkProps> = memo(
   ({
     children,
     href,
@@ -33,7 +33,7 @@ export const AppLink: FC<AppLinkProps> = memo(
   }) => {
     const pathname = usePathname();
     return (
-      <Link
+      <NextLink
         href={href}
         className={twJoin(
           className,
@@ -43,7 +43,7 @@ export const AppLink: FC<AppLinkProps> = memo(
         {...props}
       >
         {children}
-      </Link>
+      </NextLink>
     );
   }
 );

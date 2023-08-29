@@ -1,6 +1,17 @@
 import { serviceTypes } from '@neon/widgets/catalog/constants';
-import { FC } from 'react';
+import { GetStaticPaths } from 'next';
 import Image from 'next/legacy/image';
+import { FC } from 'react';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = serviceTypes.map((service) => ({
+    params: { serviceType: service.type },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
 type ServiceProps = {
   params: {
@@ -10,11 +21,11 @@ type ServiceProps = {
 
 const Service: FC<ServiceProps> = ({ params: { serviceType } }) => {
   const service = serviceTypes.find((service) => service.type === serviceType);
-  if (!service) return;
+  if (!service) return null;
   const { bgImg, serviceName, text } = service;
 
   return (
-    <div className="flex w-full h-full max-h-fit text-white gap-10 relative tabletS:p-20 max-tabletM:flex-col items-center">
+    <div className="flex w-full h-full text-white gap-10 relative">
       <Image
         priority
         src={bgImg}
@@ -23,11 +34,11 @@ const Service: FC<ServiceProps> = ({ params: { serviceType } }) => {
         alt={serviceName}
         className="opacity-20 z-0 inset-0 pointer-events-none rounded-2xl"
       />
-      <div className="flex flex-col p-5  gap-10 text-xl w-full">
+      <div className="flex flex-col p-5 gap-10 text-xl w-full">
         <span className="text-5xl text-orange-700">{serviceName}</span>
-        <pre className="whitespace-pre-line tabletM:pl-10">{text}</pre>
+        <pre className="whitespace-pre-line">{text}</pre>
       </div>
-      <div className="tabletM:w-2/3 w-full h-96 relative">
+      <div className="w-2/3 h-96 relative">
         <Image
           priority
           src={bgImg}
@@ -40,14 +51,5 @@ const Service: FC<ServiceProps> = ({ params: { serviceType } }) => {
     </div>
   );
 };
-export default Service;
 
-export async function getStaticPaths() {
-  const paths = serviceTypes.map((srvice) => ({
-    params: { serviceType: srvice.type },
-  }));
-  return {
-    paths,
-    fallback: false,
-  };
-}
+export default Service;
