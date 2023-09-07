@@ -5,7 +5,7 @@ import { twJoin } from 'tailwind-merge';
 
 export enum LinkStyleType {
   MENU_LINK = 'p-3',
-  HEADER_LINK = 'p-3',
+  HEADER_LINK = 'p-3 flex items-center gap-3',
   NONE = '',
 }
 export enum SelectedLinkStyleType {
@@ -18,7 +18,7 @@ type AppLinkProps = {
   children?: ReactNode;
   href: string;
   linkStyle?: LinkStyleType;
-  selectedEffect: SelectedLinkStyleType;
+  selectedEffect?: SelectedLinkStyleType;
   className?: string;
 } & LinkProps;
 

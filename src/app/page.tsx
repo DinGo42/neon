@@ -5,8 +5,6 @@ export default function Home() {
     <>
       <WorkExpContainer />
       <Catalog />
-      <Feedback />
-      <Location />
     </>
   );
 }

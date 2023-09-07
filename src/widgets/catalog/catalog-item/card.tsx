@@ -5,7 +5,7 @@ import { ServiceType } from '../constants';
 
 export const Card: FC<ServiceType> = memo(
   ({ serviceName, type, bgImg = '/imgs/moss.jpg' }) => (
-    <div className="p-5 text-green-700 bg-black rounded-2xl flex flex-col gap-4 hover:scale-102 transition-all duration-500 items-end justify-center max-w-full min-w-19 max-h-32 min-h-19 relative">
+    <Link href={`services/${type}`} className="p-5 text-green-700 bg-black rounded-2xl flex flex-col gap-4 hover:scale-102 transition-all duration-500 items-end justify-center max-w-full min-w-19 max-h-32 min-h-19 relative">
       <Image
         src={bgImg}
         objectFit="cover"
@@ -17,14 +17,6 @@ export const Card: FC<ServiceType> = memo(
       <div className="w-full h-full flex items-center justify-center">
         <h1 className="text-4xl z-10 text-center">{serviceName}</h1>
       </div>
-      <Link
-        href={`services/${type}`}
-        className="p-5 text-orange-700 text-xl z-10"
-      >
-        <h3>
-          <strong>Дитальніше...</strong>
-        </h3>
-      </Link>
-    </div>
+    </Link>
   )
 );

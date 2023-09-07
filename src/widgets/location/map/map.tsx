@@ -5,6 +5,8 @@ import { officeMark, mainOffice } from './constant';
 import { MarkersList } from './marker/markers-list';
 import { apiKey } from './api/api_key';
 
+
+
 export const Map: FC = () => {
   const [selectedMarker, setSelectedMarker] = useState<officeMark | null>(null);
   const mapRef = useRef<GoogleMap>(null);
@@ -42,9 +44,9 @@ export const Map: FC = () => {
       ref={mapRef}
       mapContainerStyle={containerStyle}
       center={mainOffice}
-      zoom={15}
+      zoom={16}
       options={{
-        zoomControl: true,
+        scrollwheel:false,
         styles: [
           { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
           {
