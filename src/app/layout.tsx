@@ -1,10 +1,9 @@
 import { HeaderContainer } from '@neon/widgets';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Istok_Web } from 'next/font/google'; ///Mitr
+import { Istok_Web } from 'next/font/google';
 import { AppWrapper } from '@neon/shared';
 import Head from 'next/head';
-import { apiKey } from '@neon/widgets/location';
 
 const istok_Web = Istok_Web({ subsets: ['latin'], weight: '700' });
 
@@ -55,7 +54,7 @@ export default function RootLayout({
         <script
           async
           defer
-          src={`https://maps.googleapis.com/maps/api/js?key=${apiKey}`}
+          src={`https://maps.googleapis.com/maps/api/js?key=${'AIzaSyA0sJezngIwGaI8yrDU0pn3BCE2DrRM940'}`}
         />
       </Head>
       <body className={istok_Web.className}>

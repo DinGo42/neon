@@ -18,7 +18,7 @@ export const Header: FC<HeaderProps> = ({ btnRef, isOpen, setOpen }) => {
   return (
     <>
       <header className="flex flex-col items-center sticky top-0 z-50">
-        <div className="flex w-screen pt-5 pb-5 justify-between items-center pl-4 pr-4  text-white bg-black z-20 phoneM:pl-20 phoneM:pr-20">
+        <div className="flex w-screen pt-5 pb-5 justify-between items-center pl-4 pr-4  text-white bg-black z-20 tabletM:pl-20 tabletM:pr-20">
           <Button
             onClick={() => setOpen((prev) => !prev)}
             ref={btnRef}

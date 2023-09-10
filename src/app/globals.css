@@ -8,7 +8,7 @@
   margin: 0;
   background: black;
   color: aliceblue;
-  overflow: hidden;
+  transition: none;
 }
 ::-webkit-scrollbar {
   width: 10px;

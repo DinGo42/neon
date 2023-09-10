@@ -6,7 +6,7 @@ type AppWrapperProps = {
 
 export const AppWrapper: FC<AppWrapperProps> = ({ children }) => {
   return (
-    <div className="flex-1 h-screen scroll-smooth pb-2 gap-2 overflow-y-auto flex overflow-hidden flex-col pl-2 pr-2 phoneM:pl-20 phoneM:pr-20">
+    <div className="flex-1 h-screen scroll-smooth pb-2 gap-2 overflow-x-hidden flex flex-col pl-2 pr-2 tabletM:pl-20 tabletM:pr-20">
       {children}
     </div>
   );
