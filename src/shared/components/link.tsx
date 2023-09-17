@@ -10,7 +10,7 @@ export enum LinkStyleType {
 }
 export enum SelectedLinkStyleType {
   UNDERLINE = 'border-b-2 border-blue-700',
-  HOVER_TEXT = 'text-pink-700',
+  HOVER_TEXT = 'text-green-700',
   NONE = '',
 }
 
