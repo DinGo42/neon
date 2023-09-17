@@ -1,4 +1,4 @@
-import { Catalog, WorkExpContainer, Location, Feedback } from '@neon/widgets';
+import { Catalog, WorkExpContainer } from '@neon/widgets';
 
 export default function Home() {
   return (
