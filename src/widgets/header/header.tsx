@@ -7,6 +7,7 @@ import {
   SelectedLinkStyleType,
   LinkStyleType,
 } from '@neon/shared/components/link';
+import Image from 'next/legacy/image';
 
 type HeaderProps = {
   btnRef: RefObject<HTMLButtonElement>;
@@ -18,7 +19,7 @@ export const Header: FC<HeaderProps> = ({ btnRef, isOpen, setOpen }) => {
   return (
     <>
       <header className="flex flex-col items-center sticky top-0 z-50">
-        <div className="flex w-screen pt-5 pb-5 justify-between items-center pl-4 pr-4  text-white bg-black z-20 tabletM:pl-20 tabletM:pr-20">
+        <div className="flex p-2 pt-2 max-tabletM:pt-5 max-tabletM:pb-5 w-screen justify-between items-center pl-4 pr-4  text-white bg-black z-20 dectopS:pl-20 dectopS:pr-20">
           <Button
             onClick={() => setOpen((prev) => !prev)}
             ref={btnRef}
@@ -30,9 +31,9 @@ export const Header: FC<HeaderProps> = ({ btnRef, isOpen, setOpen }) => {
             href={'/'}
             selectedEffect={SelectedLinkStyleType.HOVER_TEXT}
             linkStyle={LinkStyleType.HEADER_LINK}
-            className="hover:text-pink-700 transition-all duration-700 max-tabletM:hidden"
+            className="hover:text-pink-700 transition-all duration-700 max-tabletM:hidden w-fit"
           >
-            Home
+            <Image src={'/imgs/logo.png'} width={150} height={70} alt="Logo" />
           </AppLink>
           <div className="max-tabletM:hidden flex gap-20">
             <AppLink
