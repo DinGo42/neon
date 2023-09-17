@@ -19,13 +19,13 @@ export const WorkExp: FC<WorkExpProps> = ({ infoList, scrollHandler }) => {
           <ArrowIcon className="scale-100 hover:fill-pink-700 transition-colors duration-1000" />
         </Button>
         <div
-          className="h-80 w-full bg-white flex items-center overflow-hidden scroll-smooth rounded-xl flex-nowrap"
+          className="h-[600px] w-full bg-white flex items-center overflow-hidden scroll-smooth rounded-xl flex-nowrap"
           ref={infoList}
         >
           <InfoList />
         </div>
         <Button
-          className="right-0 z-30"
+          className="right-0 z-30 flex justify-end items-center"
           styleType={ButtonType.CARUSEL_BTN}
           onClick={() => scrollHandler(false)}
         >
