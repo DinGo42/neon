@@ -1,8 +1,15 @@
 export const infoCardArray = [
-  { src: '/imgs/work-exp/photo_1.jpg' },
   { src: '/imgs/work-exp/photo_2.jpg' },
   { src: '/imgs/work-exp/photo_3.jpg' },
   { src: '/imgs/work-exp/photo_4.jpg' },
   { src: '/imgs/work-exp/photo_5.jpg' },
   { src: '/imgs/work-exp/photo_6.jpg' },
+  { src: '/imgs/work-exp/photo_7.jpg' },
+  { src: '/imgs/work-exp/photo_8.jpg' },
+  { src: '/imgs/work-exp/photo_9.jpg' },
+  { src: '/imgs/work-exp/photo_11.jpg' },
+  { src: '/imgs/work-exp/photo_12.jpg' },
+  { src: '/imgs/work-exp/photo_13.jpg' },
+  { src: '/imgs/work-exp/photo_14.jpg' },
+  { src: '/imgs/work-exp/photo_15.jpg' },
 ];
