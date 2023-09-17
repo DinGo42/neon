@@ -3,6 +3,7 @@ import { GoogleMap, useLoadScript, Polyline } from '@react-google-maps/api';
 import { FC, useMemo, useRef, useState } from 'react';
 import { officeMark, mainOffice } from './constant';
 import { MarkersList } from './marker/markers-list';
+import 'dotenv/config';
 
 export const Map: FC = () => {
   const [selectedMarker, setSelectedMarker] = useState<officeMark | null>(null);
@@ -27,7 +28,8 @@ export const Map: FC = () => {
     padding: '10px',
   };
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyA0sJezngIwGaI8yrDU0pn3BCE2DrRM940',
+    googleMapsApiKey:
+      process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || 'key is expired',
   });
   if (!isLoaded) {
     return (
