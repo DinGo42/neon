@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { AppLink } from '@neon/shared/components';
 import {
   LinkStyleType,
@@ -17,7 +17,7 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
   return (
     <div
       id="menu"
-      className={`bg-black w-screen flex flex-col text-green-700 absolute top-auto overflow-hidden  z-10 h-fit ${
+      className={`bg-black w-screen flex flex-col text-pink-700 absolute top-auto overflow-hidden  z-10 h-fit ${
         isOpen
           ? 'translate-y-16 border-b-2 border-green-700 shadow-green-700'
           : '-translate-y-[200%]'
@@ -28,16 +28,17 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
         selectedEffect={SelectedLinkStyleType.HOVER_TEXT}
         linkStyle={LinkStyleType.HEADER_LINK}
       >
-        <HomeIcon fill={`${pathname==='/'?'#FF66CC':'#33FF00'}`}/>
+        <HomeIcon fill={`${pathname === '/' ? '#33FF00' : '#FF66CC'}`} />
         Головна
       </AppLink>
       <AppLink
         href={'/contact-us'}
         selectedEffect={SelectedLinkStyleType.HOVER_TEXT}
-
         linkStyle={LinkStyleType.HEADER_LINK}
       >
-        <PhoneIcon fill={`${pathname==='/contact-us'?'#FF66CC':'#33FF00'}`}/>
+        <PhoneIcon
+          fill={`${pathname === '/contact-us' ? '#33FF00' : '#FF66CC'}`}
+        />
         Зв`язок з нами
       </AppLink>
     </div>
