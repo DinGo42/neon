@@ -7,14 +7,15 @@ export const HeaderContainer = () => {
   const [isOpen, setOpen] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
   const menuClickHandler = useCallback(
-    (e) => {
+    (e: MouseEvent) => {
       if (!btnRef.current) return;
-      if (btnRef.current.contains(e.target)) {
+      const target = e.target as HTMLElement;
+      if (btnRef.current.contains(e.target as Node)) {
         return;
       } else if (
         isOpen &&
-        !btnRef.current.contains(e.target) &&
-        e.target.id !== 'menu'
+        !btnRef.current.contains(e.target as Node) &&
+        target.id !== 'menu'
       ) {
         setOpen(false);
       }

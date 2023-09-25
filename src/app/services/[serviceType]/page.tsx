@@ -2,6 +2,12 @@ import { serviceTypes } from '@neon/widgets/catalog/constants';
 import { FC } from 'react';
 import Image from 'next/legacy/image';
 
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return serviceTypes.map((service) => ({ serviceType: service.type }));
+}
+
 type ServiceProps = {
   params: {
     serviceType: string;
@@ -11,6 +17,7 @@ type ServiceProps = {
 const Service: FC<ServiceProps> = ({ params: { serviceType } }) => {
   const service = serviceTypes.find((service) => service.type === serviceType);
   if (!service) return;
+
   const { bgImg, serviceName, text } = service;
 
   return (
@@ -46,12 +53,12 @@ const Service: FC<ServiceProps> = ({ params: { serviceType } }) => {
 };
 export default Service;
 
-export async function getStaticPaths() {
-  const paths = serviceTypes.map((srvice) => ({
-    params: { serviceType: srvice.type },
-  }));
-  return {
-    paths,
-    fallback: false,
-  };
-}
+// export async function getStaticPaths() {
+//   const paths = serviceTypes.map((srvice) => ({
+//     params: { serviceType: srvice.type },
+//   }));
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }

@@ -1,4 +1,6 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  pageExtensions: ['ts', 'tsx'],
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -8,6 +10,8 @@ module.exports = {
     return config;
   },
   experimental: {
-    serverActions: true,
+    appDir: true,
   },
 };
+
+module.exports = nextConfig;
