@@ -29,25 +29,19 @@ export const Map: FC = () => {
   };
   const { isLoaded } = useLoadScript({
     googleMapsApiKey:
-      process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || 'key is expired',
+      process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || 'The key has expired',
   });
-  if (!isLoaded) {
-    return (
-      <p className="relative left-[40%] phoneM:left-[50%] pt-48">Loading...</p>
-    );
-  }
-
-  return (
+  return isLoaded ? (
     <GoogleMap
       ref={mapRef}
       mapContainerStyle={containerStyle}
       center={mainOffice}
-      zoom={16}
+      zoom={15.1}
       options={{
         mapId: '9223276839a83cdf',
         scrollwheel: false,
         mapTypeControl: false,
-        fullscreenControl: false,
+        fullscreenControl: true,
       }}
     >
       <MarkersList
@@ -65,5 +59,7 @@ export const Map: FC = () => {
         />
       )}
     </GoogleMap>
+  ) : (
+    <p className="relative left-[40%] phoneM:left-[50%] pt-48">Loading...</p>
   );
 };

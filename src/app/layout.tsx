@@ -3,8 +3,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Istok_Web } from 'next/font/google';
 import { AppWrapper } from '@neon/shared';
-import Head from 'next/head';
-import 'dotenv/config';
 
 const istok_Web = Istok_Web({ subsets: ['latin'], weight: '700' });
 
@@ -54,13 +52,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <script
-          async
-          defer
-          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API_KEY}`}
-        />
-      </Head>
       <body className={istok_Web.className}>
         <AppWrapper>
           <HeaderContainer />

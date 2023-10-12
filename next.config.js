@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   pageExtensions: ['ts', 'tsx'],
   webpack(config) {
     config.module.rules.push({
