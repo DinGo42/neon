@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    unoptimized: true,
+  },
   output: 'export',
   pageExtensions: ['ts', 'tsx'],
   webpack(config) {
